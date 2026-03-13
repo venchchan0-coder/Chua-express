@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chua Express</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#ff2b85;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+margin:0;
+}
+
+.cart{
+background:white;
+color:#ff2b85;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.container{
+padding:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+padding:15px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.price{
+color:#ff2b85;
+font-weight:bold;
+margin:10px 0;
+}
+
+button{
+background:#ff2b85;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e02170;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#333;
+color:white;
+margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🍔 Chua Express</h1>
+<div class="cart">
+Cart: <span id="count">0</span> | ₱<span id="total">0</span>
+</div>
+</header>
+
+<div class="container">
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>Burger Meal</h3>
+<p class="price">₱120</p>
+<button onclick="addToCart(120)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>Fried Chicken</h3>
+<p class="price">₱150</p>
+<button onclick="addToCart(150)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>Pizza</h3>
+<p class="price">₱300</p>
+<button onclick="addToCart(300)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/200">
+<h3>Milk Tea</h3>
+<p class="price">₱90</p>
+<button onclick="addToCart(90)">Add to Cart</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 Chua Express Food Delivery
+</footer>
+
+<script>
+
+let count = 0;
+let total = 0;
+
+function addToCart(price){
+count++;
+total += price;
+
+document.getElementById("count").innerText = count;
+document.getElementById("total").innerText = total;
+}
+
+</script>
+
+</body>
+</html>
